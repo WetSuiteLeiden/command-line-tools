@@ -10,7 +10,7 @@ and some other explanatory and exploratory uses.
 
 `xml-color` will pretty-print XML files to the console with colors and options to e.g. remove namespaces
 
-`xml-path-statistics` counts how often each path occurs in an XML file
+`xml-path-statistics` counts how often each path occurs in an XML file, potentially useful to estimate structure when writing code to extract specific things
 
 `xml-text` will print only the text content, as a quick but dirty 'give me some text to play with'
 
