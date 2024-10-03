@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+''' Given one or more paths to a LocalKV style database,
+    does an SQLite vacuum on it.
+'''
+import sys, os #, time, json, pprint
+import wetsuite.helpers.localdata
+
+if __name__ == '__main__':
+    gain_bytes_threshold = 1024*1024
+
+    for path in sys.argv[1:]:
+
+        if not os.path.exists( path ):
+            print( f'Specified path not found: {repr(path)}' )
+            sys.exit(-2)
+
+        if not wetsuite.helpers.localdata.is_file_a_store( path ):
+            print( f'Specified path does not seem to be an SQLite file created by us: {repr(path)}' )
+            sys.exit(-3)
+
+        store = wetsuite.helpers.localdata.LocalKV(path, str, str) # the types are not actually used because we don't use put()
+
+        if store.estimate_waste() <= gain_bytes_threshold:
+            print(f"estimate_waste() suggests we would gain <={gain_bytes_threshold} bytes, refusing to rewrite {repr(path)}")
+        else:
+            print("vacuuming %r..."%path)
+            store.vacuum()
+            print("Done.")
+
+        store.close()
