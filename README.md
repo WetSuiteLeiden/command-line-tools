@@ -1,6 +1,7 @@
 # command-line-tools
-A disparate set of command line tools that have found some purepose over the span of this project.
+A disparate set of command line tools that have found some purpose over the span of this project.
 
+Some are debug tools. Some are specific projects.
 
 
 ## XML helpers 
