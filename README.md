@@ -2,7 +2,9 @@
 A disparate set of command line tools that have found some purpose over the span of this project.
 
 Most of these are very specific-purpose, and not so generally interesting.
+
 Some are debug tools.
+
 Some are specific projects.
 
 
