@@ -14,9 +14,7 @@ for filename in sys.argv[1:]:
     count_pages, count_textless = 0, 0
 
     with open(filename, "rb") as file:
-        page_generator = wetsuite.extras.pdf.page_text(
-            file.read()
-        )  # which is currently a thin wrapper around pymupdf
+        page_generator = wetsuite.extras.pdf.perpage_text_generator( file.read() )  # which is currently a thin wrapper around pymupdf
         for page_i, page_text in enumerate(page_generator):
             count_pages += 1
             # print( "Page %d:  %d characters"%(page_i+1, len(page_text)) )
