@@ -1,11 +1,9 @@
 # command-line-tools
 A disparate set of command line tools that have found some purpose over the span of this project.
 
-Most of these are very specific-purpose, and not so generally interesting.
+Many of these are more fragmented, very specific-purpose, e.g. debug tools, so not so generally interesting.
 
-Some are debug tools.
-
-Some are specific projects.
+Some are specific projects and worth some readingif they sound like something you need.
 
 
 ## XML helpers 
